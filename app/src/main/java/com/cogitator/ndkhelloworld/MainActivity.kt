@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
      * A native method that is implemented by the 'native-lib' native library,
      * which is packaged with this application.
      */
-    external fun stringFromJNI()
+    external fun stringFromJNI(): String
 
     companion object {
 
@@ -27,11 +27,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         // Example of a call to a native method
-        stringFromJNI()
-
-        text.text = stringFromJNI()
+        textView.text = stringFromJNI()
     }
 
 }
